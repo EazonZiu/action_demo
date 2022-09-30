@@ -20,7 +20,7 @@ jobs:
         run:  ls
         
       - name: clone
-        uses: sudosubin/git-clone-action@v1
+        uses: sudosubin/git-clone-action@v1.0.1
         with:
           repository: 'EazonZiu/kingbase-v8-r3'
           platform: 'github'
