@@ -32,7 +32,7 @@ jobs:
         with:
           push: true
           tags: ${{ env.ghcr }}/${{ env.tag }}
-          context: "https://github.com/EazonZiu/kingbase-v8-r3-workflow.git"
+          context: "https://github.com/EazonZiu/kingbase-v8-r3.git"
           
   dockerhub:
     #needs: [build] #需要等待任务完成
@@ -52,4 +52,4 @@ jobs:
         with:
           push: true
           tags: ${{ env.dockerhub }}/${{ env.tag }}
-          context: "https://github.com/EazonZiu/kingbase-v8-r3-workflow.git"
+          context: "https://github.com/EazonZiu/kingbase-v8-r3.git"
