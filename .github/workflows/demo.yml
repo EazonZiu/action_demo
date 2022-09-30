@@ -1,0 +1,29 @@
+name: Image
+#触发器设置
+on:
+  push: # master分支有push时触发此workflow
+    branches: [ "main" ]
+  pull_request: 
+    branches: [ "main" ]
+
+#项目任务，任务之间可以并行调度
+jobs:
+      
+  clone:
+    #needs: [build] #需要等待任务完成
+    #选择云端运行的环境
+    runs-on: ubuntu-latest # job运行的基础环境
+  
+    steps: # 一个job由一个或多个step组成
+
+      - name: ls
+        run:  ls
+        
+      - name: clone
+        uses: sudosubin/git-clone-action@v1.0.1
+        with:
+          repository: 'EazonZiu/kingbase-v8-r3'
+          platform: 'github'
+          
+      - name: ls
+        run:  ls
