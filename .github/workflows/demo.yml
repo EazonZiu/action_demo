@@ -10,7 +10,7 @@ env:
   tag: "kingbase:v8r3"
   ghcr: "ghcr.io/eazonziu"
   dockerhub: "haloking"
-  workplace: "https://github.com/EazonZiu/kingbase-v8-r3-workflow.git"
+  wp: "https://github.com/EazonZiu/kingbase-v8-r3-workflow.git"
 
 #项目任务，任务之间可以并行调度
 jobs:
@@ -34,7 +34,7 @@ jobs:
         with:
           push: true
           tags: ${{ env.ghcr }}/${{ env.tag }}
-          context: ${{ workplace }} #構建dockerfile的上下文位置
+          context: ${{ wp }} #構建dockerfile的上下文位置
           
   dockerhub:
     #needs: [build] #需要等待任务完成
@@ -54,4 +54,4 @@ jobs:
         with:
           push: true
           tags: ${{ env.dockerhub }}/${{ env.tag }}
-          context: ${{ workplace }}
+          context: ${{ wp }}
